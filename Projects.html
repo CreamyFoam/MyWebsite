@@ -1,0 +1,197 @@
+<!DOCTYPE HTML>
+<!--
+	Landed by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>My Projects</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<header id="header">
+					<!--<h1 id="logo"><a href="index.html">玉置千智</a></h1> -->
+					<nav id="nav">
+						<ul>
+							<li><a href="Home.html">Home</a></li>
+							<li>
+								<!-- <a href="#">メニュー</a> -->
+								<!-- <i class="fas fa-caret-square-down"></i> -->
+								<i class="fas fa-bars"></i>
+								<ul>
+									<li><a href="Specialty.html">機械・航空工学の知識</a></li>
+									<li><a href="Creativity.html">積極性と創造性</a></li>
+									<li><a href="Projects.html">My Projects</a></li>
+									<li><a href="#footer">お問い合わせ</a></li>
+
+
+								<!--	<li>
+										<a href="#">Submenu</a>
+											<li><a href="#">English</a></li>
+											<li><a href="#">Deutsch</a></li>
+									</li>
+								-->
+								</ul>
+							</li>
+							<li>
+							 <i class="fas fa-language"></i>
+									<ul>
+										<li><a href="#">English</a></li>
+										<li><a href="#">Deutsch</a></li>
+									</ul>
+							</li>
+							<!--<li><a href="elements.html">Elements</a></li> -->
+							<!--<li><a href="#" class="button primary">Sign Up</a></li> -->
+						</ul>
+					</nav>
+				</header>
+
+			<!-- Main -->
+				<div id="main" class="wrapper style3">
+					<div class="container">
+						<header class="major">
+							<h2>My Projects</h2>
+							<p>これまでに私が行った過去のプロジェクトの一覧</p>
+						</header>
+						<div class="row gtr-150">
+							<div class="col-6 col-12-medium">
+
+								<!-- Content -->
+									<section id="content">
+										<section>
+											<h3>機械学習を用いた水門の検出</h3>
+											<a href="#" class="image fit"><img src="images/Schleuse1.png" alt="" /></a>
+											<p>これは、MNIST等の標準的な機械学習を学習するためのデータではなく、実際の生のデータに機械学習を応用することを目的としたプロジェクトである。</p>
+											<p>私たちの班では、班員がインターンをしている会社から水門を通過する船のレーダー計測のデータを入手し、それに機械学習を応用した。水門の計測データは右上のようであり、このデータだけではどの計測点が水門の可動部(門)・側壁・その他のどこに位置しているか判別できない。私たちのモデルはそれを自動的に判別するようにトレーニングされた。</p>
+											<p>学習に用いられた教師データは最小二乗法を用いてラベリングを施し、データには回転を加えることで、回転に対する耐性をモデルに学習させた。結果は下の通りである。</p>
+											<span href="#" class="image fit"><img src="images/3DConv2.png" alt="" /></span>
+											<p>点のそれぞれの意味は、船が水門に向かって進行していることを仮定したとき</p>
+												<ul>
+													<li>黄色：右側の壁上の計測点
+													<li>青色：左側の壁上の計測点
+													<li>黒色：水門（門の可動部）上の計測点
+													<li>緑色：船自身、または上記に当てはまらない計測点
+													<li>赤色：モデルの予測と正解のラベルが異なっている計測点（間違った予測）
+												</ul>
+											<p>となっている。全体的に傾いているのは、データ作成時に加えた回転によるものである。一部側壁上の通路などに位置する計測点では間違った予測をすることが認められるが、赤い点は極めて少なく、精度も99%以上を達成することができた。これはモデルが回転に対して強い耐性を得たことを意味する。
+
+											<footer>
+												<ul class="actions">
+													<li><a href="Projects/RiverLock.html" class="button">Learn More</a></li>
+												</ul>
+											</footer>
+										</section>
+										<hr />
+										<section>
+											<a href="#" class="image fit"><img src="images/pic07.jpg" alt="" /></a>
+											<h3>Amet Lorem Tempus</h3>
+											<p>Sed tristique purus vitae volutpat commodo suscipit amet sed nibh. Proin a ullamcorper sed blandit. Sed tristique purus vitae volutpat commodo suscipit ullamcorper sed blandit lorem ipsum dolore.</p>
+											<footer>
+												<ul class="actions">
+													<li><a href="#" class="button">Learn More</a></li>
+												</ul>
+											</footer>
+										</section>
+										<hr />
+										<section>
+											<a href="#" class="image fit"><img src="images/pic07.jpg" alt="" /></a>
+											<h3>Amet Lorem Tempus</h3>
+											<p>Sed tristique purus vitae volutpat commodo suscipit amet sed nibh. Proin a ullamcorper sed blandit. Sed tristique purus vitae volutpat commodo suscipit ullamcorper sed blandit lorem ipsum dolore.</p>
+											<footer>
+												<ul class="actions">
+													<li><a href="#" class="button">Learn More</a></li>
+												</ul>
+											</footer>
+										</section>
+									</section>
+
+							</div>
+							<div class="col-6 col-12-medium">
+
+								<!-- Sidebar -->
+									<section id="sidebar">
+										<section>
+											<h3>Amet Lorem Tempus</h3>
+											<p>Sed tristique purus vitae volutpat commodo suscipit amet sed nibh. Proin a ullamcorper sed blandit. Sed tristique purus vitae volutpat commodo suscipit ullamcorper sed blandit lorem ipsum dolore.</p>
+											<a href="#" class="image fit"><img src="images/pic07.jpg" alt="" /></a>
+											<footer>
+												<ul class="actions">
+													<li><a href="#" class="button">Learn More</a></li>
+												</ul>
+											</footer>
+										</section>
+										<hr />
+										<section>
+											<h3>Amet Lorem Tempus</h3>
+											<p>Sed tristique purus vitae volutpat commodo suscipit amet sed nibh. Proin a ullamcorper sed blandit. Sed tristique purus vitae volutpat commodo suscipit ullamcorper sed blandit lorem ipsum dolore.</p>
+											<a href="#" class="image fit"><img src="images/pic07.jpg" alt="" /></a>
+											<footer>
+												<ul class="actions">
+													<li><a href="#" class="button">Learn More</a></li>
+												</ul>
+											</footer>
+										</section>
+										<hr />
+										<section>
+											<h3>Amet Lorem Tempus</h3>
+											<p>Sed tristique purus vitae volutpat commodo suscipit amet sed nibh. Proin a ullamcorper sed blandit. Sed tristique purus vitae volutpat commodo suscipit ullamcorper sed blandit lorem ipsum dolore.</p>
+											<a href="#" class="image fit"><img src="images/pic07.jpg" alt="" /></a>
+											<footer>
+												<ul class="actions">
+													<li><a href="#" class="button">Learn More</a></li>
+												</ul>
+											</footer>
+										</section>
+									</section>
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<footer id="footer">
+					<!--
+					<ul class="icons">
+						<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+						<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+						<li><a href="#" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
+					</ul>
+				-->
+					<ul class="icons">
+						<li><a href="https://www.linkedin.com/in/chitoshi-tamaoki-19966a228/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+						<li><a href="https://github.com/CreamyFoam" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+					</ul>
+					<ul class="actions special">
+						<li><a href="https://forms.gle/q5ukLKE8M9BKrjgX9" class="button">お問い合わせ</a></li>
+					</ul>
+					<p>履歴書はお問い合わせフォームよりお求めください</p>
+					<!-- 問い合わせ編集画面　https://docs.google.com/forms/d/1M2KOzJzFdCQbA3ByI2xr8sEl32p-L7Nu82l-tU5_rLk/edit-->
+					<!--<ul class="copyright">
+						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul> -->
+				</footer>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
