@@ -68,45 +68,51 @@
 										<section>
 											<h3>機械学習を用いた水門の検出</h3>
 											<a href="#" class="image fit"><img src="images/Schleuse1.png" alt="" /></a>
-											<p>これは、MNIST等の標準的な機械学習を学習するためのデータではなく、実際の生のデータに機械学習を応用することを目的としたプロジェクトである。</p>
-											<p>私たちの班では、班員がインターンをしている会社から水門を通過する船のレーダー計測のデータを入手し、それに機械学習を応用した。水門の計測データは右上のようであり、このデータだけではどの計測点が水門の可動部(門)・側壁・その他のどこに位置しているか判別できない。私たちのモデルはそれを自動的に判別するようにトレーニングされた。</p>
-											<p>学習に用いられた教師データは最小二乗法を用いてラベリングを施し、データには回転を加えることで、回転に対する耐性をモデルに学習させた。結果は下の通りである。</p>
-											<span href="#" class="image fit"><img src="images/3DConv2.png" alt="" /></span>
-											<p>点のそれぞれの意味は、船が水門に向かって進行していることを仮定したとき</p>
-												<ul>
-													<li>黄色：右側の壁上の計測点
-													<li>青色：左側の壁上の計測点
-													<li>黒色：水門（門の可動部）上の計測点
-													<li>緑色：船自身、または上記に当てはまらない計測点
-													<li>赤色：モデルの予測と正解のラベルが異なっている計測点（間違った予測）
-												</ul>
-											<p>となっている。全体的に傾いているのは、データ作成時に加えた回転によるものである。一部側壁上の通路などに位置する計測点では間違った予測をすることが認められるが、赤い点は極めて少なく、精度も99%以上を達成することができた。これはモデルが回転に対して強い耐性を得たことを意味する。
+											<p>
+												これは、MNIST等の標準的な機械学習を学習するためのデータではなく、実際の生のデータに機械学習を応用することを目的としたプロジェクトである。
+											</p>
+											<p>
+											私たちの班では、班員がインターンをしている会社から水門を通過する船のレーダー計測のデータを入手し、それに機械学習を応用した。
+											水門の計測データは右上のようであり、このデータだけではどの計測点が水門の可動部(門)・側壁・その他のどこに位置しているか判別できない。私たちのモデルはそれを自動的に判別するようにトレーニングされた。
+										  </p>
 
+											<span href="#" class="image fit"><img src="images/3DConv2.png" alt="" /></span>
 											<footer>
 												<ul class="actions">
-													<li><a href="Projects/RiverLock.html" class="button">Learn More</a></li>
+													<li><a href="RiverLock.html" class="button">Learn More</a></li>
 												</ul>
 											</footer>
 										</section>
+
+
 										<hr />
 										<section>
-											<a href="#" class="image fit"><img src="images/pic07.jpg" alt="" /></a>
-											<h3>Amet Lorem Tempus</h3>
-											<p>Sed tristique purus vitae volutpat commodo suscipit amet sed nibh. Proin a ullamcorper sed blandit. Sed tristique purus vitae volutpat commodo suscipit ullamcorper sed blandit lorem ipsum dolore.</p>
+
+											<h3>有限要素法と機械学習のフレームワークを結ぶインターフェースの開発</h3>
+											<p>支配方程式を直接入力できる有限要素法のフレームワークであるFEniCSと、機械学習のフレームワークであるPyTorchを結ぶインターフェイスを開発し、未知の項をニューラルネットワークで予測できるようにした。</p>
+											<span href="#" class="image fit"><img src="ProjectsImages/FEniCS/concentrations.png" alt="" /></span>
 											<footer>
 												<ul class="actions">
-													<li><a href="#" class="button">Learn More</a></li>
+													<li><a href="FEniCS.html" class="button">Learn More</a></li>
 												</ul>
 											</footer>
 										</section>
+
+
+
+
 										<hr />
 										<section>
-											<a href="#" class="image fit"><img src="images/pic07.jpg" alt="" /></a>
-											<h3>Amet Lorem Tempus</h3>
-											<p>Sed tristique purus vitae volutpat commodo suscipit amet sed nibh. Proin a ullamcorper sed blandit. Sed tristique purus vitae volutpat commodo suscipit ullamcorper sed blandit lorem ipsum dolore.</p>
+											<h3>強化学習を用いた飛行制御プログラムの開発</h3>
+											<span href="#" class="image fit"><img src="images/EasyModel.gif" alt="" /></span>
+											<p>
+												障害物を避けつつ、目的地を通過する飛行制御プログラムを強化学習で開発した。
+												学習時間を大幅に削減するために、簡易的なモデルで学習を行い、後に複雑な実際のモデルに適応するという二段階の手法を用いた。
+											</p>
+											<span href="#" class="image fit"><img src="ProjectsImages/Maya/simulinkStructure.png" alt="" /></span>
 											<footer>
 												<ul class="actions">
-													<li><a href="#" class="button">Learn More</a></li>
+													<li><a href="Maya.html" class="button">Learn More</a></li>
 												</ul>
 											</footer>
 										</section>
@@ -115,40 +121,44 @@
 							</div>
 							<div class="col-6 col-12-medium">
 
-								<!-- Sidebar -->
+
+								<!-- Sidebar################################################################################ -->
 									<section id="sidebar">
 										<section>
-											<h3>Amet Lorem Tempus</h3>
-											<p>Sed tristique purus vitae volutpat commodo suscipit amet sed nibh. Proin a ullamcorper sed blandit. Sed tristique purus vitae volutpat commodo suscipit ullamcorper sed blandit lorem ipsum dolore.</p>
-											<a href="#" class="image fit"><img src="images/pic07.jpg" alt="" /></a>
+											<h3>全自動缶ビールサーバー</h3>
+											<p>
+												「人を楽しませるロボット」というテーマでグループでロボットを作るこのプロジェクトで私のグループは「完全自動な缶ビールサーバー」を制作した。
+												私はグループリーダ兼電装プログラミング担当であった。
+												一見は百聞にしかずというので、ぜひ以下の動画をみていただきたい。
+											</p>
+											<span href="#" class="image fit"><img src="images/BeerServer.jpg" alt="" /></span>
+											<div class = "youtube">
+												<iframe width="560" height="315" src="https://www.youtube.com/embed/tNJJCIBRd8w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+											</div>
+										</section>
+
+
+
+										<hr />
+										<section>
+											<h3>ロードバイクのエアロカバーの開発</h3>
+											<p>
+												自転車の抵抗の80パーセント以上は空気抵抗である。
+												現在の高級ロードバイクでは空気抵抗を発生させるケーブルやワイヤーはフレームの中に収納されている。
+												しかしすでに所有しているフレームのケーブル収納することはできず、機材の点で他の選手と大き差がついてしまうことも少なくない。
+												そこでこれらケーブルの空気抵抗を削減するカバーをCFDと風洞実験で開発した。
+											</p>
+											<span href="#" class="image fit"><img src="images/simulation.png" alt="" /></span>
 											<footer>
 												<ul class="actions">
-													<li><a href="#" class="button">Learn More</a></li>
+													<li><a href="Aerocover.html" class="button">Learn More</a></li>
 												</ul>
 											</footer>
 										</section>
 										<hr />
-										<section>
-											<h3>Amet Lorem Tempus</h3>
-											<p>Sed tristique purus vitae volutpat commodo suscipit amet sed nibh. Proin a ullamcorper sed blandit. Sed tristique purus vitae volutpat commodo suscipit ullamcorper sed blandit lorem ipsum dolore.</p>
-											<a href="#" class="image fit"><img src="images/pic07.jpg" alt="" /></a>
-											<footer>
-												<ul class="actions">
-													<li><a href="#" class="button">Learn More</a></li>
-												</ul>
-											</footer>
-										</section>
-										<hr />
-										<section>
-											<h3>Amet Lorem Tempus</h3>
-											<p>Sed tristique purus vitae volutpat commodo suscipit amet sed nibh. Proin a ullamcorper sed blandit. Sed tristique purus vitae volutpat commodo suscipit ullamcorper sed blandit lorem ipsum dolore.</p>
-											<a href="#" class="image fit"><img src="images/pic07.jpg" alt="" /></a>
-											<footer>
-												<ul class="actions">
-													<li><a href="#" class="button">Learn More</a></li>
-												</ul>
-											</footer>
-										</section>
+
+
+
 									</section>
 
 							</div>

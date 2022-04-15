@@ -6,11 +6,11 @@
 -->
 <html>
 	<head>
-		<title>No Sidebar - Landed by HTML5 UP</title>
+		<title>FEMとPytorchの融合</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="../assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<script type="text/javascript" async
 			src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 		</script>
@@ -22,14 +22,13 @@
 			<header id="header">
 				<nav id="nav">
 					<ul>
-						<li><a href="index.html">Home</a></li>
+						<li><a href="Home.html">Home</a></li>
 						<li>
-
 							<i class="fas fa-bars"></i>
 							<ul>
-								<li><a href="../Specialty.html">機械・航空工学の知識</a></li>
-								<li><a href="../Creativity.html">積極性と創造性</a></li>
-								<li><a href="../Projects.html">Projects</a></li>
+								<li><a href="Specialty.html">機械・航空工学の知識</a></li>
+								<li><a href="Creativity.html">積極性と創造性</a></li>
+								<li><a href="Projects.html">Projects</a></li>
 								<li><a href="#footer">お問い合わせ</a></li>
 							</ul>
 						</li>
@@ -67,7 +66,7 @@
 							  <h3>成果</h3>
 								<p>
 									FEniCSとPythonをつなぐフレームワークとしてFEniCS adjointが開発されており、それを用いて独自のクラスで機械学習のニューラルネットワークを規定しニュートン法で最適化するモデルが既に公開されていた。
-									私は、このモデルの関数を一部用いることで、懸念とされていたFEniCSとPyTorch間のデータの受け渡しを可能とした。
+									このモデルの関数を変更することで、懸念とされていたFEniCSとPyTorch間のデータの受け渡しを可能とした。
 									学習自体はPyTorchで行われるため、公開されているモデルよりも多種多様な損失関数やチューニングが可能となっている。
 								</p>
 
@@ -87,6 +86,19 @@
 									それぞれの物質の濃度を試行関数としu_1,u_2,u_3で表した時、Computational Graphは以下のようになる。
 								</p>
 								<span href="#" class="image"><img src="ProjectsImages/FEniCS/reactionrate.png" alt="" /></span>
+
+								<p>
+									ここで解くべき微分方程式は以下の通りである。
+									\(R_{\theta}\left(u_{1}, u_{2}\right)\)はニューラルネットワークまたは正しい化学反応式で置き換えられる。
+								</p>
+								\begin{align}
+								    \frac{\partial u_{1}}{\partial t}+w \cdot \nabla u_{1}-\nabla \cdot\left(\epsilon \nabla u_{1}\right) &= f_{1}-R_{\theta}\left(u_{1}, u_{2}\right) \quad &&\text { in } \Omega \times(0, T)\\
+								    \frac{\partial u_{2}}{\partial t}+w \cdot \nabla u_{2}-\nabla \cdot\left(\epsilon \nabla u_{2}\right) &= f_{2}-R_{\theta}\left(u_{1}, u_{2}\right) \quad &&\text { in } \Omega \times(0, T)\\
+								    \frac{\partial u_{3}}{\partial t}+w \cdot \nabla u_{3}-\nabla \cdot\left(\epsilon \nabla u_{3}\right) &= f_{3}+R_{\theta}\left(u_{1}, u_{2}\right) \quad &&\text { in } \Omega \times(0, T)\\
+								    \frac{\partial u_{i}}{\partial n} &= 0 \quad &&\text { on } \partial \Omega \times(0, T)
+								\end{align}
+
+
 
 								<p>
 									学習結果は以下のようである。
