@@ -1,0 +1,172 @@
+<!DOCTYPE HTML>
+<!--
+	Landed by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>飛行制御プログラム</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../../assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="../../assets/css/noscript.css" /></noscript>
+		<script type="text/javascript" async
+			src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+		</script>
+	</head>
+	<body class="is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+			<header id="header">
+				<h1 id="logo"><a href="../Home.html">Chitoshi Tamaoki</a></h1>
+				<nav id="nav">
+					<ul>
+						<li><a href="../Home.html">Home</a></li>
+						<li>
+							<i class="fas fa-bars"></i>
+							<ul>
+								<li><a href="../Specialty.html">機械・航空工学の知識</a></li>
+								<li><a href="../Creativity.html">積極性と創造性</a></li>
+								<li><a href="../Projects.html">My Projects</a></li>
+								<li><a href="#footer">お問い合わせ</a></li>
+							</ul>
+						</li>
+						<li>
+						 <i class="fas fa-language"></i>
+								<ul>
+									<li><a href="#">English</a></li>
+									<li><a href="#">Deutsch</a></li>
+								</ul>
+						</li>
+					</ul>
+				</nav>
+			</header>
+
+			<!-- Main -->
+				<div id="main" class="wrapper style1">
+					<div class="container">
+						<header class="major">
+							<h2>強化学習を用いた飛行制御プログラムの作成</h2>
+							<p>障害物を避けつつ、目標に飛んでいくエージェントを作成する</p>
+						</header>
+
+						<!-- Content -->
+							<section id="content">
+
+								<h3>プロジェクトの目標</h3>
+								<p>
+									大学の地形観測用の小型無人飛行機"Maya"に障害物回避機能を持たせることがこのプロジェクトの目標であった。
+									障害物回避の達成にはさまざまな手法があるが、私たちの班は強化学習を用いることとなった。
+
+
+								</p>
+
+							  <h3>成果</h3>
+								<p>
+									もともとの"Maya"の制御プログラムはSimulinkにて実装されていたため、強化学習でもMatlab/Simulinkを用いることとした。
+									Matlabを用いた強化学習には主に２通りの方法があり、一つがmファイルにクラスを作成し、そこで学習を行うものである。
+									そして二つ目がSimulinkを活用する方法である。
+
+								</p>
+
+								<p>
+									まず手始めに、小型飛行機セスナをモデルとした垂直方向のみを考慮したクラスをmファイルで作成し、強化学習をさせた。
+									このモデルではactionとしてエンジンスロットルと昇降舵を用いている。これらの操作量はローレベルと言われ、機体の挙動に直接影響する。
+									緑の楕円は障害物を示し、赤い点はゴール地点を示している。
+
+								</p>
+
+								<span class="image fit"><img src="../../ProjectsImages/Maya/cesna.gif" alt="" /></span>
+
+								<p>
+									ローレベルの操作量のため、エージェントはまず飛ぶことから学習しなくてはならず、学習は非常に不安定であった。
+									上のgif画像でも度々機体が急激に上に向いてエピソードが終了していることが確認できる。
+								</p>
+								<p>このモデルのGithubのレポジトリはこちら</p>
+								<footer>
+									<ul class="actions">
+										<li><a href="https://github.com/CreamyFoam/RLforQiita/tree/main/rl2DmFileModel" class="button">GitHub</a></li>
+									</ul>
+
+								<p>
+									そのため、Mayaへの学習は既存の伝達関数に基づいた制御ループを用い、方向や速度といったハイレベルの操作量を入力することにした。
+									以下の画像の左がSimulinkの構成であり、右が問題設定である。
+									緑の丸が通過すべき領域であり、黒い丸が障害物である。
+
+								</p>
+								<div class="row gtr-50 gtr-uniform">
+									<div class="col-6 col-6-xsmall"><span class="image fit"><img src="../../ProjectsImages/Maya/simulinkStructure.png" alt="" /></span></div>
+									<div class="col-6 col-6-xsmall"><span class="image fit"><img src="../../ProjectsImages/Maya/trainingSituation.png" alt="" /></span></div>
+								</div>
+
+								<p>
+									実際の学習ではSimulinkでの飛行シミュレーションに非常に時間がかかり、十分なエピソード数を稼ぐことができないことが問題となった。
+									そのため、以下に示す非常に簡易化した運動モデルを用いて学習を行い、そのモデルを後に実際のMayaのモデルに応用する、という手法をとった。
+								</p>
+
+								\begin{align}
+								\begin{pmatrix} X(n) \\ Y(n) \\ Z(n) \end{pmatrix} &= \begin{pmatrix} X(n-1) \\ Y(n-1) \\ Z(n-1) \end{pmatrix} + VK \cdot \begin{pmatrix} cos(\gamma(n)) cos(\chi(n)) \\ cos(\gamma(n)) sin(\chi(n)) \\ -sin(\gamma(n)) \end{pmatrix} \cdot Ts\\
+								\begin{pmatrix} \chi(n) \\ \gamma(n) \end{pmatrix} &= \begin{pmatrix} \chi(n-1) \\ \gamma(n-1) \end{pmatrix} + \begin{pmatrix} \dot{\chi}(n) \\ \dot{\gamma}(n) \end{pmatrix} \cdot Ts
+								\end{align}
+
+								<p>
+									パラメータのチューニングの後、一つ目の通過地点を安定して通過できるようになった。
+								</p>
+								<div class="row gtr-50 gtr-uniform">
+									<div class="col-6 col-6-xsmall"><span class="image fit"><img src="../../ProjectsImages/Maya/reward1.png" alt="" /></span></div>
+									<div class="col-4 col-6-xsmall"><span class="image fit"><img src="../../ProjectsImages/Maya/intermediateModel.png" alt="" /></span></div>
+								</div>
+
+								<p>
+									 同じモデルをさらに学習させた結果、二つ目の通過地点を通過できるようになった。
+								</p>
+								<div class="row gtr-50 gtr-uniform">
+									<div class="col-6 col-6-xsmall"><span class="image fit"><img src="../../ProjectsImages/Maya/reward2.png" alt="" /></span></div>
+									<div class="col-6 col-6-xsmall"><span class="image"><img src="../../ProjectsImages/Maya/EasyModel.gif" alt="" /></span></div>
+								</div>
+
+								<p>
+									 その後、この学習済みのモデルを実際のMayaの制御モデルに応用した。
+									 速度一定の仮定に基づいて簡易化されたモデルで学習を行ったため、実際の制御モデルでは目標を達成することができなかった。
+									 しかし、その軌跡は目標への到達を目指していることが十分に伺え、十分な改善を施せばこの手法が適応可能であることがわかった。
+								</p>
+								<span href="#" class="image"><img src="../../ProjectsImages/Maya/applicatioinToRealmodel.png" alt="" /></span>
+
+								　<p>このモデルのGithubのレポジトリはこちら（Mayaの実際の制御モデルの著作権は大学に付属するため、残念ながら公開することができない）</p>
+								<footer>
+									<ul class="actions">
+										<li><a href="https://github.com/CreamyFoam/RLforQiita/tree/main/rl3DSimulinkModel" class="button">GitHub</a></li>
+									</ul>
+							</section>
+
+					</div>
+				</div>
+
+			<!-- Footer -->
+				<footer id="footer">
+					<ul class="icons">
+						<li><a href="https://www.linkedin.com/in/chitoshi-tamaoki-19966a228/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+						<li><a href="https://github.com/CreamyFoam" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+					</ul>
+					<ul class="actions special">
+						<li><a href="https://forms.gle/q5ukLKE8M9BKrjgX9" class="button">お問い合わせ</a></li>
+					</ul>
+					<p>履歴書はお問い合わせフォームよりお求めください</p>
+				</footer>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="../../assets/js/jquery.min.js"></script>
+			<script src="../../assets/js/jquery.scrolly.min.js"></script>
+			<script src="../../assets/js/jquery.dropotron.min.js"></script>
+			<script src="../../assets/js/jquery.scrollex.min.js"></script>
+			<script src="../../assets/js/browser.min.js"></script>
+			<script src="../../assets/js/breakpoints.min.js"></script>
+			<script src="../../assets/js/util.js"></script>
+			<script src="../../assets/js/main.js"></script>
+
+	</body>
+</html>

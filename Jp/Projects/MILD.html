@@ -1,0 +1,157 @@
+<!DOCTYPE HTML>
+<!--
+	Landed by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>No Sidebar - Landed by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../../assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="../../assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+			<header id="header">
+				<h1 id="logo"><a href="../Home.html">Chitoshi Tamaoki</a></h1>
+				<nav id="nav">
+					<ul>
+						<li><a href="../Home.html">Home</a></li>
+						<li>
+							<i class="fas fa-bars"></i>
+							<ul>
+								<li><a href="../Specialty.html">機械・航空工学の知識</a></li>
+								<li><a href="../Creativity.html">積極性と創造性</a></li>
+								<li><a href="../Projects.html">My Projects</a></li>
+								<li><a href="#footer">お問い合わせ</a></li>
+							</ul>
+						</li>
+						<li>
+						 <i class="fas fa-language"></i>
+								<ul>
+									<li><a href="#">English</a></li>
+									<li><a href="#">Deutsch</a></li>
+								</ul>
+						</li>
+					</ul>
+				</nav>
+			</header>
+
+			<!-- Main -->
+				<div id="main" class="wrapper style1">
+					<div class="container">
+						<header class="major">
+							<h2>主成分分析によるMILD燃焼機構の解明</h2>
+							<p>LESモデル開発のための基礎研究</p>
+						</header>
+
+						<!-- Content -->
+							<section id="content">
+
+								<h3>研究の目標</h3>
+								<p>
+									現在、世界的なエネルギー需要の高まりにから、より環境に配慮した高効率かつ程環境負荷な燃焼器が求められている。
+									それを実現する新たな技術としてModerate or Intense Low-oxigen Dilution(MILD)燃焼が注目されている。
+									これは高効率かつ安定した燃焼を実現し、また放出される窒素酸化物の量も従来の燃焼と比べて大幅に削減できる。
+								</p>
+
+								<p>
+									下図は通常の燃焼形態であるPlanar火炎（平面乱流火炎）とMILD燃焼の反応速度の分布を示している。
+									MILD燃焼は一般的な火炎形態である伝搬火炎に加え、自着火領域と干渉火炎が複雑に組み合わさっている。
+									そのため、反応領域はより広く分布し、複雑に入り組んでいることが見てとれる。
+								</p>
+
+									<span href="#" class="image fit"><img src="../../ProjectsImages/MILD/fields.png" alt="" /></span>
+
+								<p>
+									この複雑な燃焼形態を用いた燃焼器の開発には数値熱流体解析が有効であり、その手法としてLarge Eddy Simulatioが有効である。
+									しかし、MILD燃焼において十分な制度を有したモデルは存在していない。
+									そのため、このモデルの開発のため、MILD燃焼場の解明が必要であった。
+								</p>
+
+							  <h3>成果</h3>
+								<p>
+									解析には主成分分析を用いた。主成分分析とは、解析するデータの特徴と各変数の清戸を数学的に顕在化できるデータ解析手法である。
+									解析には3種類のMILD燃焼(A1,A2,B1)と1種類のPlanar火炎(C)に異なるフィルターサイズのガウシアンフィルターをかけたデータを用いた。
+									8つのことなる物理量について、その現象への寄与を計算した結果、以下の物理量においてそれぞれの燃焼形態に特異的な結果が得られた。
+								</p>
+								<div class="row gtr-50 gtr-uniform">
+									<div class="col-6 col-6-xsmall"><span class="image fit"><img src="../../ProjectsImages/MILD/rotation1.png" alt="" /></span></div>
+									<div class="col-6 col-6-xsmall"><span class="image fit"><img src="../../ProjectsImages/MILD/rotation2.png" alt="" /></span></div>
+								</div>
+
+								<p>
+									これら二つのグラフは流体の剛体回転の現象への寄与をフィルターサイズに対して示している。
+									左側の第一主成分では共に単調増加しているが、第二主成分ではPlanar火炎のみ単調現象している。
+									このことから流体の剛体回転において二つの燃焼形態に優位に差が現れることがわかった。
+								</p>
+
+								<p>
+									そこで剛体回転運動の反応速度への直接的な影響をみるために関連物理量の相関について検討した。
+								</p>
+								<div class="row gtr-50 gtr-uniform">
+									<div class="col-6 col-6-xsmall"><span class="image fit"><img src="../../ProjectsImages/MILD/cor1.png" alt="" /></span></div>
+									<div class="col-6 col-6-xsmall"><span class="image fit"><img src="../../ProjectsImages/MILD/cor2.png" alt="" /></span></div>
+								</div>
+
+								<p>
+									左の図はスカラー散逸率と化学反応速度、右は剛体回転運動と化学反応速度のスピアマンの相関係数を示している。
+									ここで、過去の研究から燃焼現象において化学反応速度とスカラー散逸率には強い相関があることが知られている。
+								</p>
+								<p>
+									左の図からは平面乱流火炎ではこの二つの間に非常に強い相関が見られる一方で、MILD燃焼では、比較的強い相関を示すものの、平面乱流火炎と比べその相関は小さくなっている。
+									したがって、スカラー散逸率以外に化学反応速度を支配する物理量があると考えられる。
+								</p>
+								<p>
+									右の図に示されている、剛体回転運動と化学反応速度の相関係数では、平面乱流火炎では負の相関をとり単調減少してる一方で、MILD燃焼では比較的大きな正の相関を示している。そしてその相関係数はフィルターサイズと共に上昇している。
+									したがって、MILD燃焼では剛体回転運動と化学反応速度の間に直接的な関係があることが示唆される。
+								</p>
+								<p>
+									流体の剛体回転運動の内外では物質や熱の移動が抑制されます。MILD燃焼の特徴である自着火現象と、その自着火遅れ時間は温度と物質の損失に依存するため、この輸送の抑制により自着火現象が促進されていると考えられます。また、回転の外部では、回転によって火炎干渉が発生し、火炎の化学反応を助長していると考えられます。
+
+								</p>
+
+							</section>
+
+							<section>
+								<h3>論文</h3>
+								<p>この卒論が含まれた論文はこちらからアクセスできる</p>
+								<footer>
+									<ul class="actions">
+										<li><a href="https://www.researchgate.net/publication/347903929_Data_driven_analysis_and_prediction_of_MILD_combustion_mode" class="button">GitHub</a></li>
+									</ul>
+								</footer>
+							</section>
+					</div>
+				</div>
+
+			<!-- Footer -->
+				<footer id="footer">
+					<ul class="icons">
+						<li><a href="https://www.linkedin.com/in/chitoshi-tamaoki-19966a228/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+						<li><a href="https://github.com/CreamyFoam" class="icon brands alt fa-github"><span class="label">ReserchGate</span></a></li>
+					</ul>
+					<ul class="actions special">
+						<li><a href="https://forms.gle/q5ukLKE8M9BKrjgX9" class="button">お問い合わせ</a></li>
+					</ul>
+					<p>履歴書はお問い合わせフォームよりお求めください</p>
+				</footer>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="../../assets/js/jquery.min.js"></script>
+			<script src="../../assets/js/jquery.scrolly.min.js"></script>
+			<script src="../../assets/js/jquery.dropotron.min.js"></script>
+			<script src="../../assets/js/jquery.scrollex.min.js"></script>
+			<script src="../../assetsjs/browser.min.js"></script>
+			<script src="../../assets/js/breakpoints.min.js"></script>
+			<script src="../../assets/js/util.js"></script>
+			<script src="../../assets/js/main.js"></script>
+
+	</body>
+</html>

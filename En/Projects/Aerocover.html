@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+<!--
+	Landed by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Aerocover</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../../assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="../../assets/css/noscript.css" /></noscript>
+		<script type="text/javascript" async
+			src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+		</script>
+	</head>
+	<body class="is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+			<header id="header">
+				<h1 id="logo"><a href="../Home.html">Chitoshi Tamaoki</a></h1>
+				<nav id="nav">
+					<ul>
+						<li><a href="../Home.html">Home</a></li>
+						<li>
+							<i class="fas fa-bars"></i>
+							<ul>
+								<li><a href="../Specialty.html">機械・航空工学の知識</a></li>
+								<li><a href="../Creativity.html">積極性と創造性</a></li>
+								<li><a href="../Projects.html">My Projects</a></li>
+								<li><a href="#footer">お問い合わせ</a></li>
+							</ul>
+						</li>
+						<li>
+						 <i class="fas fa-language"></i>
+								<ul>
+									<li><a href="#">English</a></li>
+									<li><a href="#">Deutsch</a></li>
+								</ul>
+						</li>
+					</ul>
+				</nav>
+			</header>
+
+			<!-- Main -->
+				<div id="main" class="wrapper style1">
+					<div class="container">
+						<header class="major">
+							<h2>ロードバイクの空気抵抗を減らす、後付けできるエアロパーツの開発</h2>
+							<p>ブレーキワイヤーをエアロにするカバー</p>
+						</header>
+
+						<!-- Content -->
+							<section id="content">
+
+								<h3>プロジェクトの目標</h3>
+
+								<p>
+									ロードバイクの最大の抵抗は空気抵抗である。
+									自転車ロードレースでは勝敗がタイヤの幅ほどの差で決まることも多く、いかに空気抵抗を削減するかが問題となってくる。
+									自転車のブレーキや変速機のワイヤーの断面は円形をしており、カルマン渦を発生させ非常に大きな空気抵抗を生む。
+									そこでワイヤーに流線型なカバーを被せることで空気抵抗を削減することが本プロジェクトの目的である。
+								</p>
+								<span href="#" class="image"><img src="../../ProjectsImages/Aerocover/outer_flow.png" alt="" /></span>
+
+							  <h3>成果</h3>
+
+								<p>
+									シミュレーションにはAutodesk社のCFDを用いた。円筒の抵抗係数は文献（H.Schlichting;Boundary Layer Theory) より実験値が明らかであり、それに最も近くなる計算モデルを採用した。
+									RANSでよく用いられる\(k-\omega \)モデルは壁近傍での剥離の予測が悪いという欠点があるため、壁近傍の計算の得意な\(k-\omega\)モデルと壁遠方の計算の得意な\(k-\epsilon\)モデルのハイブリッドであるSST\(k-\omega\)モデルを採用した
+									自転車での実走行時は迎角が±20°であることがホイールメーカーのFLOにより明らかにされていたため、迎角を0°、10°、20°と変化させてシミュレーションを行った。
+								</p>
+
+								<span href="#" class="image"><img src="../../ProjectsImages/Aerocover/models1.png" alt="" /></span>
+								<p>
+									上図の(a)〜(e)の内、レンズ型である(e)の空気抵抗が最も小さかった。これは過去の研究よりも明らかであった。
+									よって(e)型をモデルにしつつ、新たに下図の5種類の断面でシミュレーションを行った。
+								</p>
+								<span href="#" class="image"><img src="../../ProjectsImages/Aerocover/models2.png" alt="" /></span>
+
+								<p>
+									結果は以下の通りである。
+								</p>
+								<span href="#" class="image"><img src="../../ProjectsImages/Aerocover/result1.png" alt="" /></span>
+								<p>
+									この結果から、中央部分の盛り上がりは大きな迎角(20°)に対しても空気抵抗削減効果があり、正面からの空気抵抗削減効果もあることがわかった。
+									しかしながら実際の走行時では風は迎角10°は収まることが多く、そのような小さな迎角においては形状(a)が最も優れている。 (e)の前後反転モデルも小さな迎角において非常に大きな空気抵抗削減効果を発揮しているが、実際の取り付け時には正しく前後を合わせる必要がある。
+									これらの各モデルの迎角に対する空気抵抗削減の傾向と試作品の製作における穴の工作精度、取り付け時の簡便さを考慮し、前後対象な形状である形状(a)を採用した。
+								</p>
+
+
+								<p>
+									カバーはシリコンを押し出し成形することで制作された。
+								</p>
+								<div class="row gtr-50 gtr-uniform">
+									<div class="col-6 col-6-xsmall"><span class="image fit"><img src="../../ProjectsImages/Aerocover/cover2.jpg" alt="" /></span></div>
+									<div class="col-6 col-6-xsmall"><span class="image fit"><img src="../../ProjectsImages/Aerocover/cover1.jpg" alt="" /></span></div>
+								</div>
+								<p>
+									カバーの性能を確かめるために、風洞を制作して実験を行った。
+								</p>
+								<div class="row gtr-50 gtr-uniform">
+									<div class="col-6 col-6-xsmall"><span class="image fit"><img src="../../ProjectsImages/Aerocover/ex1.png" alt="" /></span></div>
+									<div class="col-6 col-6-xsmall"><span class="image fit"><img src="../../ProjectsImages/Aerocover/ex2.png" alt="" /></span></div>
+									<div class="col-6 col-6-xsmall"><span class="image fit"><img src="../../ProjectsImages/Aerocover/ex3.png" alt="" /></span></div>
+								</div>
+
+								<p>
+									計測は風洞の最大風速である風速 8.2m/s で行われた。計測結果は以下の通りである。
+									箱ヒゲ図が実験結果であり、その上部にある赤い点は、同じ風速を用いて行われたシミュレーションの結果を示している。
+									シミュレーションで用いられた試作品のモデルは実際の形状を測定して再現されている。
+									結果を見ると、アウターワイヤーとそのカバーのどちらも、箱ヒゲ図とシミュレーション結果に同程度の差があることがわかる。
+									これは実験装置の可動部の摩擦によって引き起こされていると考えられる。
+									前述の通り、アウターワイヤーの空気抵抗のシミュレーション値は文献の実験値と一致しており、これに基づいて本実験結果の値を校正することが可能である。
+									アウターワイヤー単体の実験結果とシミュレーション値の差を考慮すると、試作品の実験結果はそのシミュレーションの値に近いことがわかる。
+									この結果から、アウターワイヤー単体の時と比べて、試作品は顕著に空気抵抗を削減していることがわかる。
+									金型を工夫することにより、より高精度の形状(a)を再現できれば、より空気抵抗を削減できだろう。
+								</p>
+								 <span href="#" class="image"><img src="../../ProjectsImages/Aerocover/experiment.png" alt="" /></span>
+								<p>
+									 実際に取り付けた写真は以下の通りである。
+								</p>
+								<span href="#" class="image fit"><img src="../../ProjectsImages/Aerocover/mounted2.jpg" alt="" /></span>
+
+
+
+							</section>
+
+					</div>
+				</div>
+
+			<!-- Footer -->
+				<footer id="footer">
+					<ul class="icons">
+						<li><a href="https://www.linkedin.com/in/chitoshi-tamaoki-19966a228/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+						<li><a href="https://github.com/CreamyFoam" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+					</ul>
+					<ul class="actions special">
+						<li><a href="https://forms.gle/2i7k79UJitMVcYFs8" class="button">お問い合わせ</a></li>
+					</ul>
+					<p>履歴書はお問い合わせフォームよりお求めください</p>
+				</footer>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="../../assets/js/jquery.min.js"></script>
+			<script src="../../assets/js/jquery.scrolly.min.js"></script>
+			<script src="../../assets/js/jquery.dropotron.min.js"></script>
+			<script src="../../assets/js/jquery.scrollex.min.js"></script>
+			<script src="../../assets/js/browser.min.js"></script>
+			<script src="../../assets/js/breakpoints.min.js"></script>
+			<script src="../../assets/js/util.js"></script>
+			<script src="../../assets/js/main.js"></script>
+
+	</body>
+</html>
