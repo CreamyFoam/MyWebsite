@@ -45,7 +45,7 @@
 					<div class="container">
 						<header class="major">
 							<h2>My Projects</h2>
-							<p>これまでに私が行った過去のプロジェクトの一覧</p>
+							<p>Previous projects I've done</p>
 						</header>
 						<div class="row gtr-150">
 							<div class="col-6 col-12-medium">
@@ -53,20 +53,20 @@
 								<!-- Content -->
 									<section id="content">
 										<section>
-											<h3>機械学習を用いた水門の検出</h3>
+											<h3>Detecting sluice gates using machine learning</h3>
 											<a href="#" class="image fit"><img src="../images/Schleuse1.png" alt="" /></a>
 											<p>
-												これは、MNIST等の標準的な機械学習を学習するためのデータではなく、実際の生のデータに機械学習を応用することを目的としたプロジェクトである。
-											</p>
+												This project aims to apply machine learning to real raw data, rather than data for standard training such as MNIST.
 											<p>
-											私たちの班では、班員がインターンをしている会社から水門を通過する船のレーダー計測のデータを入手し、それに機械学習を応用した。
-											水門の計測データは右上のようであり、このデータだけではどの計測点が水門の可動部(門)・側壁・その他のどこに位置しているか判別できない。私たちのモデルはそれを自動的に判別するようにトレーニングされた。
+											 In our group, we obtained radar measurement data of ships passing through the sluice gate from a company where our group members did internship. We applied machine learning to these data.
+											 The measurement data of the sluice gate is shown in the upper right. It is impossible to determine which measurement point is located pm the movable part (gate), side wall, and other parts of the sluice gate.
+											 Our model was trained to automatically determine them.
 										  </p>
 
 											<span href="#" class="image fit"><img src="../images/3DConv2.png" alt="" /></span>
 											<footer>
 												<ul class="actions">
-													<li><a href="RiverLock.html" class="button">Learn More</a></li>
+													<li><a href="Projects/RiverLock.html" class="button">Learn More</a></li>
 												</ul>
 											</footer>
 										</section>
@@ -75,12 +75,14 @@
 										<hr />
 										<section>
 
-											<h3>有限要素法と機械学習のフレームワークを結ぶインターフェースの開発</h3>
-											<p>支配方程式を直接入力できる有限要素法のフレームワークであるFEniCSと、機械学習のフレームワークであるPyTorchを結ぶインターフェイスを開発し、未知の項をニューラルネットワークで予測できるようにした。</p>
+											<h3>Development of an interface between finite element method and a machine learning framework</h3>
+											<p>
+												We developed an interface between FEniCS, a finite element method framework that allows direct input of governing equations, and PyTorch, a machine learning framework. Neural network are used to predict unknown terms.
+											</p>
 											<span href="#" class="image fit"><img src="../ProjectsImages/FEniCS/concentrations.png" alt="" /></span>
 											<footer>
 												<ul class="actions">
-													<li><a href="FEniCS.html" class="button">Learn More</a></li>
+													<li><a href="Projects/FEniCS.html" class="button">Learn More</a></li>
 												</ul>
 											</footer>
 										</section>
@@ -90,16 +92,16 @@
 
 										<hr />
 										<section>
-											<h3>強化学習を用いた飛行制御プログラムの開発</h3>
+											<h3>Development of a Flight Control Program using Reinforcement Learning</h3>
 											<span href="#" class="image fit"><img src="../images/EasyModel.gif" alt="" /></span>
 											<p>
-												障害物を避けつつ、目的地を通過する飛行制御プログラムを強化学習で開発した。
-												学習時間を大幅に削減するために、簡易的なモデルで学習を行い、後に複雑な実際のモデルに適応するという二段階の手法を用いた。
+												A flight control program was developed using reinforcement learning to avoid obstacles and pass the destinations.
+												In order to reduce the learning time significantly, a two-stage method was used, in which training was performed on a simple simulation model and later adapted to a complex real-world model.
 											</p>
 											<span href="#" class="image fit"><img src="../ProjectsImages/Maya/simulinkStructure.png" alt="" /></span>
 											<footer>
 												<ul class="actions">
-													<li><a href="Maya.html" class="button">Learn More</a></li>
+													<li><a href="Projects/Maya.html" class="button">Learn More</a></li>
 												</ul>
 											</footer>
 										</section>
@@ -112,11 +114,11 @@
 								<!-- Sidebar################################################################################ -->
 									<section id="sidebar">
 										<section>
-											<h3>全自動缶ビールサーバー</h3>
+											<h3>Fully automatic beer server</h3>
 											<p>
-												「人を楽しませるロボット」というテーマでグループでロボットを作るこのプロジェクトで私のグループは「完全自動な缶ビールサーバー」を制作した。
-												私はグループリーダ兼電装プログラミング担当であった。
-												一見は百聞にしかずというので、ぜひ以下の動画をみていただきたい。
+												In this project, my group built a "fully automatic beer server" under the theme of "a recreational robot".
+												I was the group leader and in charge of electrical circuit and programming.
+												Seeing tells much more than reading, so have a look at the video below.
 											</p>
 											<span href="#" class="image fit"><img src="../images/BeerServer.jpg" alt="" /></span>
 											<div class = "youtube">
@@ -128,35 +130,36 @@
 
 										<hr />
 										<section>
-											<h3>ロードバイクのエアロカバーの開発</h3>
+											<h3>Development of Aero-Cover for Road Bike</h3>
 											<p>
-												自転車の抵抗の80パーセント以上は空気抵抗である。
-												現在の高級ロードバイクでは空気抵抗を発生させるケーブルやワイヤーはフレームの中に収納されている。
-												しかしすでに所有しているフレームのケーブル収納することはできず、機材の点で他の選手と大き差がついてしまうことも少なくない。
-												そこでこれらケーブルの空気抵抗を削減するカバーをCFDと風洞実験で開発した。
+												More than 80 percent of a bicycle's resistance is aerodynamic drag.
+												On today's high-end road bikes, the cables and wires that create aerodynamic drag are stored inside the frame.
+												However, you can't store the cables in the frame you already own, which often leaves you far behind other riders in terms of equipment.
+												Therefore, I developed a aero-cover to reduce the aerodynamic drag of these cables through CFD and wind tunnel testing.
+
 											</p>
 											<span href="#" class="image fit"><img src="../images/simulation.png" alt="" /></span>
 											<footer>
 												<ul class="actions">
-													<li><a href="Aerocover.html" class="button">Learn More</a></li>
+													<li><a href="Projects/Aerocover.html" class="button">Learn More</a></li>
 												</ul>
 											</footer>
 										</section>
 										<hr />
 
 										<section>
-											<h3>MILD燃焼場の解析</h3>
+											<h3>Analysis of MILD Combustion Field</h3>
 											<p>
-											　より高効率かつ環境負荷の少ない燃焼器が求められる中、MILD燃焼はその一つの有望な解決策である。
-												MILD燃焼では火炎の化学反応が広範囲かつ複雑に起きるという特徴があり、それがこの燃焼形態を用いた燃焼器の開発を難しくしている。
-												簡単にMILD燃焼を用いた燃焼器をシミュレーションできるようにするため、高精度なMILD燃焼のモデルが求められている。
-												そのモデルを作成するための基礎研究を行った。
-												その研究内容は論文の一章としても公開された。
+												As more efficient and environmentally friendly combustors are required, MILD combustion is one of the promising solutions.
+												MILD combustion is characterized by a wide range and complex shape of chemical reactions, which makes the development of combustors using this combustion mode difficult.
+												In order to simulate a combustor with MILD combustion easily, a highly accurate model of MILD combustion is required.
+												A basic study to create such a model was carried out.
+												This research was also published as a chapter in a paper.
 											</p>
 											<span href="#" class="image fit"><img src="../ProjectsImages/MILD/fields.png" alt="" /></span>
 											<footer>
 												<ul class="actions">
-													<li><a href="Aerocover.html" class="button">Learn More</a></li>
+													<li><a href="Projects/MILD.html" class="button">Learn More</a></li>
 												</ul>
 											</footer>
 										</section>

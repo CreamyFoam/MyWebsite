@@ -1,0 +1,161 @@
+<!DOCTYPE HTML>
+<!--
+	Landed by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>MILD combustion</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../../assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="../../assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<div id="page-wrapper">
+
+			<header id="header">
+				<h1 id="logo"><a href="Home.html">Chitoshi Tamaoki</a></h1>
+				<nav id="nav">
+					<ul>
+						<li><a href="../Home.html">Home</a></li>
+						<li>
+							<i class="fas fa-bars"></i>
+							<ul>
+								<li><a href="../Specialty.html">Specialty</a></li>
+								<li><a href="../Creativity.html">Creativity</a></li>
+								<li><a href="../Projects.html">My Projects</a></li>
+								<li><a href="#footer">Contact</a></li>
+							</ul>
+						</li>
+						<li>
+						 <i class="fas fa-language"></i>
+								<ul>
+									<li><a href="../../Jp/Projects/MILD.html">日本語（Japanese）</a></li>
+								</ul>
+						</li>
+					</ul>
+				</nav>
+			</header>
+
+			<!-- Main -->
+				<div id="main" class="wrapper style1">
+					<div class="container">
+						<header class="major">
+							<h2>Analysis of MILD Combustion Field</h2>
+							<p>Basic research for LES model development</p>
+						</header>
+
+						<!-- Content -->
+							<section id="content">
+
+								<h3>Goal of the research</h3>
+								<p>
+									The increasing global demand for energy is now creating a need for more environmentally friendly combustors with high efficiency and low environmental impact.
+									Moderate or Intense Low-oxigen Dilution (MILD) combustion is attracting possibility as a new technology to achieve this.
+									MILD combustion realizes high efficiency and stable combustion, and can significantly reduce the amount of nitrogen oxides emitted compared to conventional combustion.
+								</p>
+
+								<p>
+									The figure below shows the reaction rate distributions of a Planar flame (plane turbulent flame), which is a normal combustion form, and MILD combustion.
+									MILD combustion is a complex combination of auto-ignition and interference flames in addition to the propagating flame, which is a common flame form.
+									Therefore, the reaction zone is more widely distributed and complicated.
+								</p>
+
+									<span href="#" class="image fit"><img src="../../ProjectsImages/MILD/fields.png" alt="" /></span>
+
+								<p>
+									Numerical thermo-fluid simulation is effective for the development of combustors with this complicated combustion configuration.
+									Large Eddy Simulation is an effective method for this purpose. However, there is no model with a sufficient system for MILD combustion. Therefore, it was necessary to clarify the MILD combustion field for the development of this model.
+								</p>
+
+							  <h3>Result</h3>
+								<p>
+									Principal Component Analysis was used for the analysis.
+									Principal component analysis is a data analysis method that can mathematically reveal the characteristics of the data to be analyzed and the contributions of each variable to the phenomena.
+									Three types of MILD combustion (A1, A2, B1) and one type of Planar flame (C) were filtered to Gaussian filtering with different filter sizes for the analysis.
+									The following eight different physical quantities were calculated and their contributions to the phenomena were found to be specific to each combustion type.
+
+
+								</p>
+								<div class="row gtr-50 gtr-uniform">
+									<div class="col-6 col-6-xsmall"><span class="image fit"><img src="../../ProjectsImages/MILD/rotation1.png" alt="" /></span></div>
+									<div class="col-6 col-6-xsmall"><span class="image fit"><img src="../../ProjectsImages/MILD/rotation2.png" alt="" /></span></div>
+								</div>
+
+								<p>
+									These two graphs show the contribution of the rigid body rotation of the fluid to the phenomena over filter size.
+									In the first principal component on the left side, both of them are monotonically increasing, while in the second principal component, only the Planar flame is monotonically increasing.
+									This indicates that the two combustion modes are predominantly different in the rigid body rotation of the fluid.
+								</p>
+
+								<p>
+									In order to examine the direct effect of the rigid body rotation on the reaction rate, the correlation of the related physical quantities was investigated.
+								</p>
+								<div class="row gtr-50 gtr-uniform">
+									<div class="col-6 col-6-xsmall"><span class="image fit"><img src="../../ProjectsImages/MILD/cor1.png" alt="" /></span></div>
+									<div class="col-6 col-6-xsmall"><span class="image fit"><img src="../../ProjectsImages/MILD/cor2.png" alt="" /></span></div>
+								</div>
+
+								<p>
+									The left figure shows Spearman's correlation coefficients between scalar dissipation rate and chemical reaction rate, and the right figure shows coefficients between rigid body rotation motion and chemical reaction rate.
+									Here, it is known from past studies that there is a strong correlation between chemical reaction rate and scalar dissipation rate in combustion phenomena.
+								</p>
+								<p>
+									The left figure shows that there is a very strong correlation between the two in the plane turbulent flame, while in the MILD combustion, the correlation is smaller than that in the plane turbulent flame,.
+									Therefore, it is considered that there are physical quantities other than the scalar dissipation rate that govern the chemical reaction rate.
+								</p>
+								<p>
+									The correlation coefficients between the chemical reaction rate and the rigid-body rotational motion, shown in the right figure, are negative and monotonically decreasing in the plane turbulent flame.
+									However they are relatively large and positive in the MILD combustion and the correlation coefficients increase with the filter size.
+									Therefore, it is suggested that there is a direct relationship between the rigid-body rotational motion and the chemical reaction rate in the MILD combustion.
+								</p>
+								<p>
+									Inside and outside of the rigid rotational motion of the fluid, mass and heat transport is suppressed.
+									Since the auto-ignition phenomenon is a characteristic feature of MILD combustion and its auto-ignition delay time depends on temperature and mass loss, the suppression of this transport is thought to promote the auto-ignition phenomenon.
+									Outside of the rotation, the flame interference is also considered to be generated by the rotation, which contributes to the flame chemical reaction.
+								</p>
+
+							</section>
+
+							<section>
+								<h3>Published Paper</h3>
+								<p>The paper containing this thesis can be accessed here</p>
+								<footer>
+									<ul class="actions">
+										<li><a href="https://www.researchgate.net/publication/347903929_Data_driven_analysis_and_prediction_of_MILD_combustion_mode" class="button">ReserchGate</a></li>
+									</ul>
+								</footer>
+							</section>
+					</div>
+				</div>
+
+				<!-- Footer -->
+				<section id="footer" >
+					<footer>
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/chitoshi-tamaoki-19966a228/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+							<li><a href="https://github.com/CreamyFoam" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+						<ul class="actions special">
+							<li><a href="https://forms.gle/2i7k79UJitMVcYFs8" class="button">Contact me</a></li>
+						</ul>
+						<p>Please use the contact form to request a resume</p>
+					</footer>
+				</section>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="../../assets/js/jquery.min.js"></script>
+			<script src="../../assets/js/jquery.scrolly.min.js"></script>
+			<script src="../../assets/js/jquery.dropotron.min.js"></script>
+			<script src="../../assets/js/jquery.scrollex.min.js"></script>
+			<script src="../../assetsjs/browser.min.js"></script>
+			<script src="../../assets/js/breakpoints.min.js"></script>
+			<script src="../../assets/js/util.js"></script>
+			<script src="../../assets/js/main.js"></script>
+
+	</body>
+</html>

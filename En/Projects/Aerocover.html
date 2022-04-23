@@ -18,26 +18,24 @@
 	<body class="is-preload">
 		<div id="page-wrapper">
 
-			<!-- Header -->
 			<header id="header">
-				<h1 id="logo"><a href="../Home.html">Chitoshi Tamaoki</a></h1>
+				<h1 id="logo"><a href="Home.html">Chitoshi Tamaoki</a></h1>
 				<nav id="nav">
 					<ul>
-						<li><a href="../Home.html">Home</a></li>
+						<li><a href="Home.html">Home</a></li>
 						<li>
 							<i class="fas fa-bars"></i>
 							<ul>
-								<li><a href="../Specialty.html">機械・航空工学の知識</a></li>
-								<li><a href="../Creativity.html">積極性と創造性</a></li>
+								<li><a href="../Specialty.html">Specialty</a></li>
+								<li><a href="../Creativity.html">Creativity</a></li>
 								<li><a href="../Projects.html">My Projects</a></li>
-								<li><a href="#footer">お問い合わせ</a></li>
+								<li><a href="#footer">Contact</a></li>
 							</ul>
 						</li>
 						<li>
 						 <i class="fas fa-language"></i>
 								<ul>
-									<li><a href="#">English</a></li>
-									<li><a href="#">Deutsch</a></li>
+									<li><a href="../../Jp/Projects/Aerocover.html">日本語（Japanese）</a></li>
 								</ul>
 						</li>
 					</ul>
@@ -48,79 +46,92 @@
 				<div id="main" class="wrapper style1">
 					<div class="container">
 						<header class="major">
-							<h2>ロードバイクの空気抵抗を減らす、後付けできるエアロパーツの開発</h2>
-							<p>ブレーキワイヤーをエアロにするカバー</p>
+							<h2>Development of Aero-Cover for Road Bike</h2>
+							<p>Reduction of Drag</p>
 						</header>
 
 						<!-- Content -->
 							<section id="content">
 
-								<h3>プロジェクトの目標</h3>
+								<h3>Goal of the project</h3>
 
 								<p>
-									ロードバイクの最大の抵抗は空気抵抗である。
-									自転車ロードレースでは勝敗がタイヤの幅ほどの差で決まることも多く、いかに空気抵抗を削減するかが問題となってくる。
-									自転車のブレーキや変速機のワイヤーの断面は円形をしており、カルマン渦を発生させ非常に大きな空気抵抗を生む。
-									そこでワイヤーに流線型なカバーを被せることで空気抵抗を削減することが本プロジェクトの目的である。
+									The biggest drag wihle riding a roadbike is aerodynamic drag. In racing, the difference between winning and losing is often as small as the width of the tire.
+									How to reduce the drag is a big problem.
+									The cross sections of brake and shift wires are circular, which generate Karman vortices and create very large drag.
+									The goal of this project is to reduce aerodynamic drag by covering the wires with a streamlined cover.
 								</p>
 								<span href="#" class="image"><img src="../../ProjectsImages/Aerocover/outer_flow.png" alt="" /></span>
 
-							  <h3>成果</h3>
+							  <h3>Result</h3>
 
 								<p>
-									シミュレーションにはAutodesk社のCFDを用いた。円筒の抵抗係数は文献（H.Schlichting;Boundary Layer Theory) より実験値が明らかであり、それに最も近くなる計算モデルを採用した。
-									RANSでよく用いられる\(k-\omega \)モデルは壁近傍での剥離の予測が悪いという欠点があるため、壁近傍の計算の得意な\(k-\omega\)モデルと壁遠方の計算の得意な\(k-\epsilon\)モデルのハイブリッドであるSST\(k-\omega\)モデルを採用した
-									自転車での実走行時は迎角が±20°であることがホイールメーカーのFLOにより明らかにされていたため、迎角を0°、10°、20°と変化させてシミュレーションを行った。
+									CFD from Autodesk was used for the simulation.
+									The experimental values of the resistance coefficient of a cylinder are known in a literature (H.Schlichting; Boundary Layer Theory).
+									A calculation model for the simulation which is the closest to the experimental values is adopted.
+									The k-ω model often used in RANS has a disadvantage that it cannot predict detachment of fluid near a wall well.
+									The SSTk-ω model is a hybrid of the k-ω model, which is good at near-wall calculations, and the k-ε model, which is good at far-from-the-wall calculations.
+									Since the wheel manufacturer FLO had revealed that the angle of attack was ±20° during actual bicycle riding, I performed the simulation by changing the angle of attack to 0°, 10°, and 20°.
+
 								</p>
 
 								<span href="#" class="image"><img src="../../ProjectsImages/Aerocover/models1.png" alt="" /></span>
 								<p>
-									上図の(a)〜(e)の内、レンズ型である(e)の空気抵抗が最も小さかった。これは過去の研究よりも明らかであった。
-									よって(e)型をモデルにしつつ、新たに下図の5種類の断面でシミュレーションを行った。
+									Among (a) to (e) in the above figure, the lens type (e) had the smallest aerodynamic drag.
+									This is also shown in previous studies.
+									Therefore, the simulation was newly performed with five kinds of cross-sections in the following figure.
 								</p>
 								<span href="#" class="image"><img src="../../ProjectsImages/Aerocover/models2.png" alt="" /></span>
 
 								<p>
-									結果は以下の通りである。
+									The results are shown below.
 								</p>
 								<span href="#" class="image"><img src="../../ProjectsImages/Aerocover/result1.png" alt="" /></span>
 								<p>
-									この結果から、中央部分の盛り上がりは大きな迎角(20°)に対しても空気抵抗削減効果があり、正面からの空気抵抗削減効果もあることがわかった。
-									しかしながら実際の走行時では風は迎角10°は収まることが多く、そのような小さな迎角においては形状(a)が最も優れている。 (e)の前後反転モデルも小さな迎角において非常に大きな空気抵抗削減効果を発揮しているが、実際の取り付け時には正しく前後を合わせる必要がある。
-									これらの各モデルの迎角に対する空気抵抗削減の傾向と試作品の製作における穴の工作精度、取り付け時の簡便さを考慮し、前後対象な形状である形状(a)を採用した。
+									From the results, it was found that the raised center part has a drag reduction even for the whole range of angle of attack.
+									However, in the reality, the wind often settles in the angle of attack of 10°, and shape (a) is the best for such a small angle of attack.
+									The inverted model (e) also shows a great drag reduction at small angles of attack, but it is necessary to align the front and rear of the model correctly when actually installing the model.
+									Considering the trend of drag reduction of these models, the accuracy of the holes in the fabrication, and the ease of installation, shape (a), which is a front-back symmetrical shape, was adopted.
+
+
 								</p>
 
 
 								<p>
-									カバーはシリコンを押し出し成形することで制作された。
+									The cover was produced by extrusion process with silicon.
 								</p>
 								<div class="row gtr-50 gtr-uniform">
 									<div class="col-6 col-6-xsmall"><span class="image fit"><img src="../../ProjectsImages/Aerocover/cover2.jpg" alt="" /></span></div>
 									<div class="col-6 col-6-xsmall"><span class="image fit"><img src="../../ProjectsImages/Aerocover/cover1.jpg" alt="" /></span></div>
 								</div>
 								<p>
-									カバーの性能を確かめるために、風洞を制作して実験を行った。
+									To verify the performance of the aero-cover, a wind tunnel was built and the cover was tested in it.
 								</p>
 								<div class="row gtr-50 gtr-uniform">
-									<div class="col-6 col-6-xsmall"><span class="image fit"><img src="../../ProjectsImages/Aerocover/ex1.png" alt="" /></span></div>
-									<div class="col-6 col-6-xsmall"><span class="image fit"><img src="../../ProjectsImages/Aerocover/ex2.png" alt="" /></span></div>
-									<div class="col-6 col-6-xsmall"><span class="image fit"><img src="../../ProjectsImages/Aerocover/ex3.png" alt="" /></span></div>
+									<div class="col-6 col-6-xsmall"><span class="image fit"><img src="../../ProjectsImages/Aerocover/ex1En.png" alt="" /></span></div>
+									<div class="col-6 col-6-xsmall"><span class="image fit"><img src="../../ProjectsImages/Aerocover/ex2En.png" alt="" /></span></div>
+									<div class="col-6 col-6-xsmall"><span class="image fit"><img src="../../ProjectsImages/Aerocover/ex3En.png" alt="" /></span></div>
 								</div>
 
 								<p>
-									計測は風洞の最大風速である風速 8.2m/s で行われた。計測結果は以下の通りである。
-									箱ヒゲ図が実験結果であり、その上部にある赤い点は、同じ風速を用いて行われたシミュレーションの結果を示している。
-									シミュレーションで用いられた試作品のモデルは実際の形状を測定して再現されている。
-									結果を見ると、アウターワイヤーとそのカバーのどちらも、箱ヒゲ図とシミュレーション結果に同程度の差があることがわかる。
-									これは実験装置の可動部の摩擦によって引き起こされていると考えられる。
-									前述の通り、アウターワイヤーの空気抵抗のシミュレーション値は文献の実験値と一致しており、これに基づいて本実験結果の値を校正することが可能である。
-									アウターワイヤー単体の実験結果とシミュレーション値の差を考慮すると、試作品の実験結果はそのシミュレーションの値に近いことがわかる。
-									この結果から、アウターワイヤー単体の時と比べて、試作品は顕著に空気抵抗を削減していることがわかる。
-									金型を工夫することにより、より高精度の形状(a)を再現できれば、より空気抵抗を削減できだろう。
+									Measurements were taken at a wind speed of 8.2 m/s, which is the maximum wind speed in the wind tunnel.
+									The measurement results are shown below.
+									The box diagram shows the results.
+									The red dots at the top show the results of the simulation performed at the same wind speed.
+									The prototype model used in the simulation was reproduced by measuring the actual geometry.
+									The results show that there is a similar difference between the box diagram and the simulation results for both the outer wire and its cover.
+									This can be interpreted to be caused by the friction of the moving parts of the measurement unit.
+									As mentioned earlier, the simulated values of the aerodynamic drag of the outer wire are consistent with the experimental values in the literature.
+									It is possible to calibrate the values of the present experimental results on this basis.
+									Considering the difference between the experimental and simulated values of the outer wire alone, the experimental results of the prototype are close to the value of that simulation.
+									This result shows that the prototype has significantly reduced aerodynamic drag compared to the outer wire alone.
+									If we can reproduce the shape (a) more precisely by devising the mold, we can reduce the aerodynamic drag even more.
+
+
 								</p>
 								 <span href="#" class="image"><img src="../../ProjectsImages/Aerocover/experiment.png" alt="" /></span>
 								<p>
-									 実際に取り付けた写真は以下の通りである。
+									 This shows how it was mounted.
 								</p>
 								<span href="#" class="image fit"><img src="../../ProjectsImages/Aerocover/mounted2.jpg" alt="" /></span>
 
@@ -131,17 +142,19 @@
 					</div>
 				</div>
 
-			<!-- Footer -->
-				<footer id="footer">
-					<ul class="icons">
-						<li><a href="https://www.linkedin.com/in/chitoshi-tamaoki-19966a228/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-						<li><a href="https://github.com/CreamyFoam" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-					</ul>
-					<ul class="actions special">
-						<li><a href="https://forms.gle/2i7k79UJitMVcYFs8" class="button">お問い合わせ</a></li>
-					</ul>
-					<p>履歴書はお問い合わせフォームよりお求めください</p>
-				</footer>
+				<!-- Footer -->
+				<section id="footer" >
+					<footer>
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/chitoshi-tamaoki-19966a228/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+							<li><a href="https://github.com/CreamyFoam" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+						<ul class="actions special">
+							<li><a href="https://forms.gle/2i7k79UJitMVcYFs8" class="button">Contact me</a></li>
+						</ul>
+						<p>Please use the contact form to request a resume</p>
+					</footer>
+				</section>
 
 		</div>
 

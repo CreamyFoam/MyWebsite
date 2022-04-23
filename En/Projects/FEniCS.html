@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>FEMとPytorchの融合</title>
+		<title>FEniCS</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="../../assets/css/main.css" />
@@ -18,26 +18,24 @@
 	<body class="is-preload">
 		<div id="page-wrapper">
 
-			<!-- Header -->
-			<header id="header">
-				<h1 id="logo"><a href="../Home.html">Chitoshi Tamaoki</a></h1>
+			<<header id="header">
+				<h1 id="logo"><a href="Home.html">Chitoshi Tamaoki</a></h1>
 				<nav id="nav">
 					<ul>
 						<li><a href="../Home.html">Home</a></li>
 						<li>
 							<i class="fas fa-bars"></i>
 							<ul>
-								<li><a href="../Specialty.html">機械・航空工学の知識</a></li>
-								<li><a href="../Creativity.html">積極性と創造性</a></li>
+								<li><a href="../Specialty.html">Specialty</a></li>
+								<li><a href="../Creativity.html">Creativity</a></li>
 								<li><a href="../Projects.html">My Projects</a></li>
-								<li><a href="#footer">お問い合わせ</a></li>
+								<li><a href="#footer">Contact</a></li>
 							</ul>
 						</li>
 						<li>
 						 <i class="fas fa-language"></i>
 								<ul>
-									<li><a href="#">English</a></li>
-									<li><a href="#">Deutsch</a></li>
+									<li><a href="../../Jp/Projects/FeniCS.html">日本語（Japanese）</a></li>
 								</ul>
 						</li>
 					</ul>
@@ -48,49 +46,59 @@
 				<div id="main" class="wrapper style1">
 					<div class="container">
 						<header class="major">
-							<h2>有限要素法のFEniCSと機械学習のPyTorchをつなぐインターフェイスの開発</h2>
-							<p>機械学習を用いて支配方程式の未知の項を予測する</p>
+							<h2>Development of an interface between finite element method and a machine learning framework</h2>
+							<p>Predicting unknown terms in governing equations using machine learning</p>
 						</header>
 
 						<!-- Content -->
 							<section id="content">
 
-								<h3>プロジェクトの目標</h3>
+								<h3>Goal of the project</h3>
 								<p>
-									FEniCSとは多くの研究機関で共同で開発された有限要素法(FEM)のフレームワークである。支配方程式を直接入力しメッシュと関数空間を指定することで数値解析をすることができるため、研究目的で非常に有用なツールである。
-									しかし、支配方程式が完全に既知であることが前提となっており、化学反応や乱流などの未知、または非常に複雑な物理現象においてはその式が明らかでないことが多い。
-									そこで、機械学習を用いてその未知の項を予測する手法が<a href= "https://www.sciencedirect.com/science/article/pii/S0021999121005465" >Mitusch et al.</a>などから提案されていた。
-									しかしながら、FEniCSは専用のUFLオブジェクトを用いて関数空間を表現しており、直接FEniCSの計算結果をPyTorchに受け渡すことができない。ゆに、そのインターフェイスの開発が求められていた。
+									FEniCS is a framework for Finite Element Method (FEM) developed in collaboration with many research institutes.
+									It is a very useful tool for research purposes because it allows us directly inputting the governing equations and specifying the mesh and function space for simulations.
+									However, it is assumed that the governing equations are completely known, and the equations are often not clear for unknown or very complicated physical phenomena such as chemical reactions and turbulence.
+									Therefore, a method to predict its unknown terms using machine learning was proposed by <a href= "https://www.sciencedirect.com/science/article/pii/S0021999121005465" >Mitusch et al.</a>. and others.
+									However, FEniCS uses a dedicated UFL object to represent the function space, and the result of FEniCS calculation cannot be directly passed to PyTorch.
+									Therefore, the development of its interface was required.
+
 								</p>
 								<span href="#" class="image"><img src="../../ProjectsImages/FEniCS/Pytorch_Fenics.png" alt="" /></span>
 
-							  <h3>成果</h3>
+							  <h3>Result</h3>
 								<p>
-									FEniCSとPythonをつなぐフレームワークとしてFEniCS adjointが開発されており、それを用いて独自のクラスで機械学習のニューラルネットワークを規定しニュートン法で最適化するモデルが既に公開されていた。
-									このモデルの関数を変更することで、懸念とされていたFEniCSとPyTorch間のデータの受け渡しを可能とした。
-									学習自体はPyTorchで行われるため、公開されているモデルよりも多種多様な損失関数やチューニングが可能となっている。
+									FEniCS adjoint has been developed as a framework connecting FEniCS and Python.
+									A class using this adjoint has already been published that specifies a machine learning neural network with its own class and optimizes it using Newton's method.
+									By modifying the function of this class, the data transfer between FEniCS and PyTorch was made possible.
+									Since the learning itself is performed in PyTorch, a wider variety of loss functions and tuning is possible than in the published model.
 								</p>
 
-								<h4>はりのヤング率の予測</h4>
+								<h4>Prediction of Young's Modulus of Acupuncture</h4>
 								<p>
-									この例では自重によってたわむ"はり"のヤング率を予測している。はりの右上の点の変位をインプット、ヤング率をアウトプットとするモデルを作成し、正しいヤング率を用いて計算した偏位を教師データとして学習を行った。
+									In this example, I predicted the Young's modulus of a "beam" which is deflected by its own weight.
+									A model was created with the displacement of the upper right point of the beam as input and Young's modulus as output.
+									The deflection calculated using the correct Young's modulus was used as the teacher data for training.
 								</p>
 								<span href="#" class="image"><img src="../../ProjectsImages/FEniCS/beam.png" alt="" /></span>
 								<p>
-									学習は300エポックかけて行われた。正しいヤング率の100000MPaに対し、予測値は129998.7344MPaとなった。これは自重のみが考慮され、変位が非常に小さいために多少の誤差が残っているものと思われる。
+									The study was done over 300 epochs.
+									The predicted value was 129998.7344 MPa compared to the correct Young's modulus of 100000 MPa.
+									This may be due to the fact that only the self-weight was taken into account and the displacement was very small, which left some error.
 								</p>
 								<span href="#" class="image"><img src="../../ProjectsImages/FEniCS/Beam_displacement.png" alt="" /></span>
 
-								<h4>化学反応率の予測</h4>
+								<h4>Prediction of chemical reaction rates</h4>
 								<p>
-									この例では化学物質AとBがシリンダーから放出され、それらが触れ合うとその濃度に応じて化学反応が起き、物質Cが生成される。その化学反応を説明する項をニューラルネットワークに置き換えて予測するのが目標であった。
-									それぞれの物質の濃度を試行関数としu_1,u_2,u_3で表した時、Computational Graphは以下のようになる。
+									In this example, chemicals A and B are released from the cylinder.
+									When they touch each other, a chemical reaction occurs depending on their concentration, and produces substance C.
+									The goal was to predict the terms that explain the chemical reaction by replacing them with a neural network.
+									When the concentration of each substance is expressed by \(u_1\), \(u_2\), and \(u_3\) as a trial function, Computational Graph becomes as follows.
 								</p>
 								<span href="#" class="image"><img src="../../ProjectsImages/FEniCS/reactionrate.png" alt="" /></span>
 
 								<p>
-									ここで解くべき微分方程式は以下の通りである。
-									\(R_{\theta}\left(u_{1}, u_{2}\right)\)はニューラルネットワークまたは正しい化学反応式で置き換えられる。
+									The differential equation to be solved here is as follows
+									\(R_{\theta}\left(u_{1}, u_{2}\right)\)is replaced by a neural network or the correct chemical equation.
 								</p>
 								\begin{align}
 								    \frac{\partial u_{1}}{\partial t}+w \cdot \nabla u_{1}-\nabla \cdot\left(\epsilon \nabla u_{1}\right) &= f_{1}-R_{\theta}\left(u_{1}, u_{2}\right) \quad &&\text { in } \Omega \times(0, T)\\
@@ -102,7 +110,7 @@
 
 
 								<p>
-									学習結果は以下のようである。
+									The results are as follows.
 								</p>
 								<div class="row gtr-50 gtr-uniform">
 									<div class="col-6 col-6-xsmall"><span class="image fit"><img src="../../ProjectsImages/FEniCS/concentrations.png" alt="" /></span></div>
@@ -110,7 +118,8 @@
 								</div>
 
 								<p>
-									非線形性を有した化学反応項を予測するため、学習はハイパーパラメータに強く依存している。上記結果では物質Cの生成量が多く見積もられているが、そのオーダーは等しく、適切に学習が行われたことを示している。
+									The training is strongly dependent on the hyperparameters in order to predict the chemical reaction terms with non-linearity.
+									In the above results, the amount of substance C produced is estimated to be large, but the orders are equal, indicating that the training was performed appropriately.
 								</p>
 
 
@@ -118,7 +127,7 @@
 							</section>
 							<section>
 								<h3>Github</h3>
-								<p>当該のGithubのレポジトリはこちら</p>
+								<p>The Github repository is here</p>
 								<footer>
 									<ul class="actions">
 										<li><a href="https://github.com/CreamyFoam/fenic-ann" class="button">GitHub</a></li>
@@ -130,17 +139,19 @@
 					</div>
 				</div>
 
-			<!-- Footer -->
-				<footer id="footer">
-					<ul class="icons">
-						<li><a href="https://www.linkedin.com/in/chitoshi-tamaoki-19966a228/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-						<li><a href="https://github.com/CreamyFoam" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-					</ul>
-					<ul class="actions special">
-						<li><a href="https://forms.gle/2i7k79UJitMVcYFs8" class="button">お問い合わせ</a></li>
-					</ul>
-					<p>履歴書はお問い合わせフォームよりお求めください</p>
-				</footer>
+				<!-- Footer -->
+				<section id="footer" >
+					<footer>
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/chitoshi-tamaoki-19966a228/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+							<li><a href="https://github.com/CreamyFoam" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+						<ul class="actions special">
+							<li><a href="https://forms.gle/2i7k79UJitMVcYFs8" class="button">Contact me</a></li>
+						</ul>
+						<p>Please use the contact form to request a resume</p>
+					</footer>
+				</section>
 
 		</div>
 

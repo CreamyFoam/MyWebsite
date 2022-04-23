@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>飛行制御プログラム</title>
+		<title>Maya</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="../../assets/css/main.css" />
@@ -18,26 +18,24 @@
 	<body class="is-preload">
 		<div id="page-wrapper">
 
-			<!-- Header -->
 			<header id="header">
-				<h1 id="logo"><a href="../Home.html">Chitoshi Tamaoki</a></h1>
+				<h1 id="logo"><a href="Home.html">Chitoshi Tamaoki</a></h1>
 				<nav id="nav">
 					<ul>
-						<li><a href="../Home.html">Home</a></li>
+						<li><a href="Home.html">Home</a></li>
 						<li>
 							<i class="fas fa-bars"></i>
 							<ul>
-								<li><a href="../Specialty.html">機械・航空工学の知識</a></li>
-								<li><a href="../Creativity.html">積極性と創造性</a></li>
+								<li><a href="../Specialty.html">Specialty</a></li>
+								<li><a href="../Creativity.html">Creativity</a></li>
 								<li><a href="../Projects.html">My Projects</a></li>
-								<li><a href="#footer">お問い合わせ</a></li>
+								<li><a href="#footer">Contact</a></li>
 							</ul>
 						</li>
 						<li>
 						 <i class="fas fa-language"></i>
 								<ul>
-									<li><a href="#">English</a></li>
-									<li><a href="#">Deutsch</a></li>
+									<li><a href="../../Jp/Projects/Maya.html">日本語（Japanese）</a></li>
 								</ul>
 						</li>
 					</ul>
@@ -48,53 +46,53 @@
 				<div id="main" class="wrapper style1">
 					<div class="container">
 						<header class="major">
-							<h2>強化学習を用いた飛行制御プログラムの作成</h2>
-							<p>障害物を避けつつ、目標に飛んでいくエージェントを作成する</p>
+							<h2>Development of a Flight Control Program using Reinforcement Learning</h2>
+							<p>Create an agent that flies to the target while avoiding obstacles</p>
 						</header>
 
 						<!-- Content -->
 							<section id="content">
 
-								<h3>プロジェクトの目標</h3>
+								<h3>Goal of the project</h3>
 								<p>
-									大学の地形観測用の小型無人飛行機"Maya"に障害物回避機能を持たせることがこのプロジェクトの目標であった。
-									障害物回避の達成にはさまざまな手法があるが、私たちの班は強化学習を用いることとなった。
-
+									The goal of this project was to provide Maya, a small unmanned aerial vehicle for ground observation at the university, with an obstacle avoidance function.
+									There are various methods to achieve obstacle avoidance, but our group decided to use reinforcement learning.
 
 								</p>
 
-							  <h3>成果</h3>
+							  <h3>Result</h3>
 								<p>
-									もともとの"Maya"の制御プログラムはSimulinkにて実装されていたため、強化学習でもMatlab/Simulinkを用いることとした。
-									Matlabを用いた強化学習には主に２通りの方法があり、一つがmファイルにクラスを作成し、そこで学習を行うものである。
-									そして二つ目がSimulinkを活用する方法である。
+									Since the original control program of Maya was implemented in Simulink, I decided to use Matlab/Simulink for reinforcement learning.
+									There are two main methods using Matlab.
+									One is to create classes in m.files and learn them there.
+									The second method is using Simulink.
 
 								</p>
 
 								<p>
-									まず手始めに、小型飛行機セスナをモデルとした垂直方向のみを考慮したクラスをmファイルで作成し、強化学習をさせた。
-									このモデルではactionとしてエンジンスロットルと昇降舵を用いている。これらの操作量はローレベルと言われ、機体の挙動に直接影響する。
-									緑の楕円は障害物を示し、赤い点はゴール地点を示している。
+									As a first step, I created a vertical-only class modeled after a small airplane, Cessna, in an m.file.
+									In this model, engine throttle and elevation rudder are used as actions.
+									These manipulation quantities are said to be low-level and directly affect the behavior of the aircraft.
+									The green ellipse shows the obstacle and the red dot shows the goal point.
 
 								</p>
 
 								<span class="image fit"><img src="../../ProjectsImages/Maya/cesna.gif" alt="" /></span>
 
 								<p>
-									ローレベルの操作量のため、エージェントはまず飛ぶことから学習しなくてはならず、学習は非常に不安定であった。
-									上のgif画像でも度々機体が急激に上に向いてエピソードが終了していることが確認できる。
+									Due to the low-level manipulation volume, the agent had to learn to fly first. Therefore the learning process was very unstable.
+									In the above gif image, it can be seen that the aircraft turned up abruptly and the episode ended suddenly.
 								</p>
-								<p>このモデルのGithubのレポジトリはこちら</p>
+								<p>Here is the Github repository for this mode</p>
 								<footer>
 									<ul class="actions">
 										<li><a href="https://github.com/CreamyFoam/RLforQiita/tree/main/rl2DmFileModel" class="button">GitHub</a></li>
 									</ul>
 
 								<p>
-									そのため、Mayaへの学習は既存の伝達関数に基づいた制御ループを用い、方向や速度といったハイレベルの操作量を入力することにした。
-									以下の画像の左がSimulinkの構成であり、右が問題設定である。
-									緑の丸が通過すべき領域であり、黒い丸が障害物である。
-
+									Therefore, I decided to use high-level manipulation quantities such as direction and velocity as input and a control loop based on the existing transfer function.
+									The left image below shows the Simulink configuration and the right image shows the problem setup.
+									The green circle is the region to pass, and the black circle is the obstacle.
 								</p>
 								<div class="row gtr-50 gtr-uniform">
 									<div class="col-6 col-6-xsmall"><span class="image fit"><img src="../../ProjectsImages/Maya/simulinkStructure.png" alt="" /></span></div>
@@ -102,8 +100,9 @@
 								</div>
 
 								<p>
-									実際の学習ではSimulinkでの飛行シミュレーションに非常に時間がかかり、十分なエピソード数を稼ぐことができないことが問題となった。
-									そのため、以下に示す非常に簡易化した運動モデルを用いて学習を行い、そのモデルを後に実際のMayaのモデルに応用する、という手法をとった。
+									In the actual learning, the flight simulation in Simulink was very time-consuming.
+									The problem was that we could not earn enough number of episodes.
+									Therefore, we used the following very simplified motion model for traiing, and applied the model to the actual Maya model later.
 								</p>
 
 								\begin{align}
@@ -112,7 +111,7 @@
 								\end{align}
 
 								<p>
-									パラメータのチューニングの後、一つ目の通過地点を安定して通過できるようになった。
+									After implementation of the simplified model and tuning the parameters, I was able to pass the first passage point stably.
 								</p>
 								<div class="row gtr-50 gtr-uniform">
 									<div class="col-6 col-6-xsmall"><span class="image fit"><img src="../../ProjectsImages/Maya/reward1.png" alt="" /></span></div>
@@ -120,7 +119,7 @@
 								</div>
 
 								<p>
-									 同じモデルをさらに学習させた結果、二つ目の通過地点を通過できるようになった。
+									 After further training the same model, it successfully passed the second passage point.
 								</p>
 								<div class="row gtr-50 gtr-uniform">
 									<div class="col-6 col-6-xsmall"><span class="image fit"><img src="../../ProjectsImages/Maya/reward2.png" alt="" /></span></div>
@@ -128,13 +127,15 @@
 								</div>
 
 								<p>
-									 その後、この学習済みのモデルを実際のMayaの制御モデルに応用した。
-									 速度一定の仮定に基づいて簡易化されたモデルで学習を行ったため、実際の制御モデルでは目標を達成することができなかった。
-									 しかし、その軌跡は目標への到達を目指していることが十分に伺え、十分な改善を施せばこの手法が適応可能であることがわかった。
+									This learned model was then applied to the actual Maya control model.
+									Because the training was performed with a simplified model based on the assumption of constant speed, the actual control model could not achieve the target.
+									However, the trajectory of the model sufficiently indicated that it was aiming to reach the target.
+									It was found that this method could be adapted if sufficient improvements were made.
+
 								</p>
 								<span href="#" class="image"><img src="../../ProjectsImages/Maya/applicatioinToRealmodel.png" alt="" /></span>
 
-								　<p>このモデルのGithubのレポジトリはこちら（Mayaの実際の制御モデルの著作権は大学に付属するため、残念ながら公開することができない）</p>
+								　<p>The Github repository for this model is here (the copyright of the actual control model of Maya comes with the university, so unfortunately I can't publish it)</p>
 								<footer>
 									<ul class="actions">
 										<li><a href="https://github.com/CreamyFoam/RLforQiita/tree/main/rl3DSimulinkModel" class="button">GitHub</a></li>
@@ -144,17 +145,19 @@
 					</div>
 				</div>
 
-			<!-- Footer -->
-				<footer id="footer">
-					<ul class="icons">
-						<li><a href="https://www.linkedin.com/in/chitoshi-tamaoki-19966a228/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-						<li><a href="https://github.com/CreamyFoam" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-					</ul>
-					<ul class="actions special">
-						<li><a href="https://forms.gle/2i7k79UJitMVcYFs8" class="button">お問い合わせ</a></li>
-					</ul>
-					<p>履歴書はお問い合わせフォームよりお求めください</p>
-				</footer>
+				<!-- Footer -->
+				<section id="footer" >
+					<footer>
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/chitoshi-tamaoki-19966a228/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+							<li><a href="https://github.com/CreamyFoam" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+						<ul class="actions special">
+							<li><a href="https://forms.gle/2i7k79UJitMVcYFs8" class="button">Contact me</a></li>
+						</ul>
+						<p>Please use the contact form to request a resume</p>
+					</footer>
+				</section>
 
 		</div>
 
