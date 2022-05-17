@@ -62,7 +62,10 @@
 									そこで、機械学習を用いてその未知の項を予測する手法が<a href= "https://www.sciencedirect.com/science/article/pii/S0021999121005465" >Mitusch et al.</a>などから提案されていた。
 									しかしながら、FEniCSは専用のUFLオブジェクトを用いて関数空間を表現しており、直接FEniCSの計算結果をPyTorchに受け渡すことができない。ゆに、そのインターフェイスの開発が求められていた。
 								</p>
-								<span href="#" class="image fit"><img src="../../ProjectsImages/FEniCS/Pytorch_Fenics.png" alt="" /></span>
+								<div class="row aln-center">
+									<div class="col-6 col-6-xsmall"><span href="#" class="image fit"><img src="../../ProjectsImages/FEniCS/Pytorch-Fenics.png" alt="" /></span></div>
+									<div class="col-6 col-6-xsmall"></div>
+								</div>
 
 							  <h3>成果</h3>
 								<p>
@@ -75,18 +78,27 @@
 								<p>
 									この例では自重によってたわむ"はり"のヤング率を予測している。はりの右上の点の変位をインプット、ヤング率をアウトプットとするモデルを作成し、正しいヤング率を用いて計算した偏位を教師データとして学習を行った。
 								</p>
-								<span href="#" class="image fit"><img src="../../ProjectsImages/FEniCS/beam.png" alt="" /></span>
+								<div class="row aln-center">
+									<div class="col-6 col-6-xsmall"><span href="#" class="image fit"><img src="../../ProjectsImages/FEniCS/beam.png" alt="" /></span></div>
+									<div class="col-6 col-6-xsmall"></div>
+								</div>
 								<p>
 									学習は300エポックかけて行われた。正しいヤング率の100000MPaに対し、予測値は129998.7344MPaとなった。これは自重のみが考慮され、変位が非常に小さいために多少の誤差が残っているものと思われる。
 								</p>
-								<span href="#" class="image fit"><img src="../../ProjectsImages/FEniCS/Beam_displacement.png" alt="" /></span>
+								<div class="row aln-center">
+									<div class="col-6 col-6-xsmall"><span href="#" class="image fit"><img src="../../ProjectsImages/FEniCS/Beam_displacement.png" alt="" /></span></div>
+									<div class="col-6 col-6-xsmall"></div>
+								</div>
 
 								<h4>化学反応率の予測</h4>
 								<p>
 									この例では化学物質AとBがシリンダーから放出され、それらが触れ合うとその濃度に応じて化学反応が起き、物質Cが生成される。その化学反応を説明する項をニューラルネットワークに置き換えて予測するのが目標であった。
 									それぞれの物質の濃度を試行関数としu_1,u_2,u_3で表した時、Computational Graphは以下のようになる。
 								</p>
-								<span href="#" class="image fit"><img src="../../ProjectsImages/FEniCS/reactionrate.png" alt="" /></span>
+								<div class="row aln-center">
+									<div class="col-6 col-6-xsmall"><span href="#" class="image fit"><img src="../../ProjectsImages/FEniCS/reactionrate.png" alt="" /></span></div>
+									<div class="col-6 col-6-xsmall"></div>
+								</div>
 
 								<p>
 									ここで解くべき微分方程式は以下の通りである。

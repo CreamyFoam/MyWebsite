@@ -77,8 +77,10 @@
 								\end{equation}
 								<p>ここで\(\hat{\theta}\)はparameter vectorであり、\(r_i^2=(y_i-\hat{y}_i)^2\)である。LMSはLSQ(Least squares method)より外れ値に対してよりロバストである。
 									下図のようにxとyの座標ごとのデータの分布を確認し、そこから左右の壁(下図黄色と青線)を特定し、残りの点から赤線で示された水門を検出しラベリングした。</p>
-
-								<span href="#" class="image fit"><img src="../../ProjectsImages/RiverLock/classify.png" alt="" /></span>
+									<div class="row aln-center">
+										<div class="col-6 col-6-xsmall"><span href="#" class="image fit"><img src="../../ProjectsImages/RiverLock/classify.png" alt="" /></span></div>
+										<div class="col-6 col-6-xsmall"></div>
+									</div>
 								<p>ラベリングには以下のラベル用いた。</p>
 
 								<ul>
@@ -91,7 +93,10 @@
 								<p>これらラベルが振られた全25フレームに対し、x,y,z軸それぞれに対して10,10,20の回転のパターンを適用し、1000フレームまで教師データを増やした後、ガウスノイズをランダムに適用し、レーザー測定のノイズを人工的に再現した。</p>
 
 								<p>学習には以下に示す畳み込み型ニューラルネットワークを用いた。インプットデータのラベルはone-hot型とし、アウトプット層にはSoft max関数を用いることで典型的なclassification問題として解決を図った。</p>
-								<span href="#" class="image fit"><img src="../../ProjectsImages/RiverLock/ConvSt.png" alt="" /></span>
+								<div class="row aln-center">
+									<div class="col-6 col-6-xsmall"><span href="#" class="image fit"><img src="../../ProjectsImages/RiverLock/ConvSt.png" alt="" /></span></div>
+									<div class="col-6 col-6-xsmall"></div>
+								</div>
 
 								<p>学習は300エポック弱で終了し、最終的な精度は99.36%となった。</p>
 
